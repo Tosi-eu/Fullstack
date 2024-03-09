@@ -1,0 +1,180 @@
+/* ==================== Fontes ======================*/
+
+                @font-face {
+                    font-family: "arialBMT";
+                    src: url("../fonts/arial-mt-bold.ttf") format("truetype");
+                }
+
+                @font-face {
+                    font-family: "arialMT";
+                    src: url("../fonts/arialmt.ttf") format("truetype");
+                }
+
+/* =================================================*/
+
+/* ================ Classe report ==================*/
+
+                .report {
+                    width: 800px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    border: 20px solid #f1f1f1;
+                }
+
+/* =================================================*/
+
+/* ============= Imagens e Divs delas ==============*/
+
+                #image-top {
+                    text-align: center;
+                }
+
+                #image-center {
+                    text-align: left;
+                    margin-top: -5px;
+                    margin-bottom: 40px;
+                    margin-left: 105px;
+                    width: 600px;
+                }
+
+                #upper-img {
+                    height: 225px;
+                    width: 800px;
+                }
+
+                #center-img {
+                    height: 325px;
+                    width: 700px;
+                    margin-left: -50px;
+                }
+
+                #side-by-side-images {
+                    margin-left: 45px;
+                    text-align: left;
+                }
+
+                #image-left-bottom, #image-right-bottom {
+                    display: inline-block;
+                    width: 200px;
+                    margin-right: 90px;
+                    margin-bottom: 20px;
+                    vertical-align: top;
+                }
+
+                #sd, #so
+                {
+                    height:210px;
+                    width: 340px;
+                }
+
+                #image-right-bottom {
+                    margin-right: 70px;
+                    margin-bottom: 22px;
+                    padding-left: 70px;
+                }
+
+                #footer-img {
+                    display: flex;
+                    margin: auto;
+                    width: 800px;
+                    height: 100px;
+                }
+
+/* ==================================================*/
+
+/* ===================== Textos =====================*/
+
+                #upper-text {
+                    width: 600px;
+                    color: #74787a;
+                    font-family: 'arialMT', Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                    margin-top: -30px;
+                    margin-left: -50px;
+                }
+
+                #upper-gray{
+                    color: #b2b2b2;
+                    font-size: 13px;
+                    font-family: 'arialMT', sans-serif;
+                    margin-left: -50px;
+                    margin-top: 20px;
+                }
+
+                #upper-strong {
+                    width: 700px;
+                    font-family: 'arialBMT', Arial, Helvetica, sans-serif;
+                    font-size: 29px;
+                    margin-left: -50px;
+                    margin-top: 10px;
+                    display: inline-block;
+                }
+
+                #bottom-strong-kobe{
+                    font-family: 'arialBMT', Arial, Helvetica, sans-serif;
+                    font-size: 24px;
+                    width: 320px;
+                    margin-top: 10px;
+                    margin-left: 3px;
+                }
+
+                #bottom-strong-zap {
+                    font-family: 'arialBMT', Arial, Helvetica, sans-serif;
+                    font-size: 24px;
+                    width: 300px;
+                    margin-top: 10px;
+                }
+
+
+                #bottom-gray {
+                    color: #b2b2b2;
+                    font-size: 13px;
+                    font-family: 'arialMT', sans-serif;
+                    margin-left: 2px;
+                    margin-top: -10px;
+                }
+
+                #footer-text {
+                    color: #000000;
+                    text-align: center;
+                    white-space: pre-line;
+                    font-family: 'arialMT', Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                }
+
+/* ====================================================*/
+
+/* ============== Barras com gradiente ================*/
+
+            .upper-gradient-bar {
+                width: 320px;
+                height: 5px;
+                background-image: linear-gradient(135deg, #ed3160 0%, #6160aa 100%);
+                margin-left: -50px;
+            }
+
+            .bottom-gradient-bar-kobe {
+                width: 210px;
+                height: 5px;
+                background-image: linear-gradient(135deg, #69c9cd 0%, #6160a9 100%);
+                margin-left: 3px;
+            }
+
+            .bottom-gradient-bar-zap {
+                width: 210px;
+                height: 5px;
+                background-image: linear-gradient(135deg, #69c9cd 0%, #2cb98e 100%);
+                margin-left: 3px;
+            }
+
+/* =================================================*/
+
+/* ===================== Misc ======================*/
+
+            a{
+                text-decoration: none;
+                color: #000000;
+            }
+
+/* =================================================*/
+

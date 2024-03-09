@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../img/off/air-fryer.ico">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script async defer src="../js/index.js"></script>
+  <title>Frita Federupa</title>
+</head>
+<body>
+  <div id="background-image"></div>
+  <div class="main-panel">
+    <div class="container">
+      <div id="panel-info">
+        <div class="info-container">
+          <div id="form-group">
+            <label for="capacity">Capacidade (litros):</label>
+            <input class="form-field" type="number" id="capacity" placeholder="Capacidade em litros">
+          </div>
+          <div id="form-group">
+            <label for="power">Potência (watts):</label>
+            <input class="form-field" type="number" id="power" placeholder="Potência em watts">
+          </div>
+          <div>
+            <div id="form-group">
+              <label for="name">Nome:</label>
+              <select id="name" onchange="updatePower()">
+                <option value="">Selecione um modelo</option>
+                <option value="AirFryer Pro">AirFryer Pro</option>
+                <option value="AirFryer XL">AirFryer XL</option>
+                <option value="AirFryer Deluxe">AirFryer Deluxe</option>
+              </select>
+            </div>        
+          </div>
+          <div id="form-group">
+            <label for="cookingTime">Tempo para Cozimento:</label>
+            <input class="form-field" type="text" id="cookingTime" placeholder="Tempo em minutos" max="90">
+          </div>
+          <div id="form-group">
+            <label for="temperature">Temperatura:</label>
+            <input class="form-field" type="number" id="temperature" placeholder="Temperatura em Celsius" max="200">
+          </div>
+        </div>
+        <div id="time-remaining">
+          <div id="time-remaining"></div>
+        </div>
+      </div>
+      <div>
+        <img id="foodImage">
+        <img id="airFryierImage">
+        <div id="loadingContainer">
+          <img id="loadingImage" src="../img/off/air_fryer_off.png" alt="Loading Image">
+        </div>
+      </div>
+      <div id="panel-food-option">
+        <div class="food-options">
+          <h2>Selecione qual alimento quer cozinhar:</h2>
+          <div class="button-container">
+            <button onclick="selectAirFryierFood('Batata')">Batata</button>
+            <button onclick="selectAirFryierFood('Esfirra')">Esfirra</button>
+            <button onclick="selectAirFryierFood('Frango empanado')">Frango empanado</button>
+            <button onclick="selectAirFryierFood('Pastel')">Pastel</button>
+            <button onclick="turnOnAirFryier()">Ligar</button>
+            <button onclick="turnOffAirFryier()">Desligar</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div id="warnings">
+  </div>
+</body>
+</html>
