@@ -1,0 +1,428 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,600,800,400);
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #5d676c;
+  font-family: "Roboto";
+}
+
+.l-site {
+  margin: 0 auto;
+  max-width: 1600px;
+  position: relative;
+  z-index: 1;
+}
+
+.l-site:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  display: block;
+  background: #252829;
+  z-index: 1;
+}
+
+.l-page {
+  position: relative;
+  margin-left: 240px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 1px 0 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.35s;
+  -moz-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.l-nav {
+  position: absolute;
+  width: 250px;
+  display: block;
+  background: #3a4043;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.band h1 {
+  margin: 0;
+  padding: 0 0 10px;
+  color: #fff;
+  font-size: 32px;
+}
+.band p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 17px;
+}
+
+.band-container {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  min-height: 92vh;
+  max-width: 960px;
+  display: table;
+  position: relative;
+  padding: 0 3em;
+}
+
+.band-inner {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3em 0 4em;
+}
+
+.band-a {
+  margin-left: -70px;
+  background: #f8ad9d;
+  box-shadow: 1px 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.nav {
+  width: 260px;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 55px;
+  overflow: auto;
+  margin-top: 80px;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav li {
+  margin: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.25s, transform 0.25s;
+  -moz-transition: background-color 0.25s, transform 0.25s;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+.nav a {
+  color: #ede2e2; /* Cor do texto */
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  margin-top: 30px;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  transition: color 0.25s;
+}
+
+.nav a:hover {
+  color: #f69ec4
+}
+
+.nav .nav-primary {
+  opacity: 1;
+}
+.nav .nav-primary:hover {
+  opacity: 0.7;
+}
+.nav .nav-secondary {
+  opacity: 0.4;
+}
+.nav .nav-secondary:hover {
+  opacity: 0.7;
+}
+
+#main-slider{
+  width: 450px;
+  margin-left: 35px;
+}
+
+#main-slider2{
+  width: 450px;
+  margin-left: 35px;
+}
+
+#main-slider3{
+  width: 450px;
+  margin-left: 35px;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 25px;
+  left: 1.5em;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu:hover .menu-hamburger:before,
+.menu:hover .menu-hamburger:after {
+  width: 24px;
+}
+.menu.is-active .menu-hamburger {
+  background: none;
+}
+.menu.is-active .menu-hamburger:before,
+.menu.is-active .menu-hamburger:after {
+  top: 0;
+  width: 24px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu.is-active .menu-hamburger:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu.is-active .menu-hamburger:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.menu-hamburger {
+  position: relative;
+  width: 24px;
+  height: 4px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 4px;
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.menu-hamburger:before, .menu-hamburger:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.menu-hamburger:before {
+  top: -8px;
+  left: 0;
+  width: 22px;
+}
+.menu-hamburger:after {
+  top: 8px;
+  width: 16px;
+  left: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .menu {
+    display: block;
+  }
+
+  .l-site.is-open {
+    overflow: hidden;
+  }
+  .l-site.is-open .l-page {
+    -webkit-transform: translateX(240px);
+    -moz-transform: translateX(240px);
+    -ms-transform: translateX(240px);
+    -o-transform: translateX(240px);
+    transform: translateX(240px);
+  }
+
+  .l-page {
+    margin-left: 0;
+    z-index: 3;
+  }
+
+  .l-nav {
+    z-index: 2;
+  }
+
+  .band-container {
+    padding: 0 1.5em;
+  }
+}
+
+p#photos{
+  margin-top: 100px;
+  padding: 10px;
+  width: 500px;
+}
+
+     
+ol {
+  counter-reset: item;
+  list-style-type: none;
+  line-height: 2.2;
+}
+
+ol li {
+  display: block;
+  position: relative;
+  width: 250px;
+  margin-left: 200px;
+}
+
+ol li:before {
+  content: counter(item) " ";
+  counter-increment: item;
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  margin-top: -1em;
+  background: linear-gradient(45deg, #f69ec4, #f9dd94);;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border-radius: 2em;
+  font-weight: 700;
+  margin-left: -35px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  margin-top: 50px;
+  margin-left: 170px;
+}
+
+h1#parties{
+  font-weight: 500;
+  margin-top: -40px;
+  margin-left: 130px;
+}
+
+h1#places{
+  font-weight: 500;
+  margin-top: -10px;
+  margin-left: 90px;
+}
+
+#title{
+  width: 40rem;
+  height: 2rem;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+#love{
+  margin-left: 65px;
+  margin-top: -33px;
+}
+
+#message {
+  margin-top: 70px;
+  margin-left: -42px;
+  width: 225px;
+  height: 280px;
+  background-color: #f8ad9d; /* Cor rosa claro para um toque romântico */
+  border: 1px solid #e35b9f; /* Cor de borda rosa mais intensa */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.3); /* Sombra rosa claro */
+  font-family: 'Roboto', serif; /* Fonte serifada para um toque clássico */
+}
+
+p#msg {
+  font-size: 20px;
+  margin-top: 15px;
+  padding-left: 25px;
+  line-height: 2.2; 
+  width: 180px; 
+  font-family: 'Roboto', serif; 
+  color: #ffffff; 
+}
+
+#message-places {
+  margin-top: 70px;
+  margin-left: -42px;
+  width: 225px;
+  height: 280px;
+  background-color: #f8ad9d; /* Cor rosa claro para um toque romântico */
+  border: 1px solid #e35b9f; /* Cor de borda rosa mais intensa */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.3); /* Sombra rosa claro */
+  font-family: 'Roboto', serif; /* Fonte serifada para um toque clássico */
+}
+
+p#msg-places {
+  font-size: 20px;
+  margin-top: 15px;
+  padding-left: 20px;
+  line-height: 2.2; 
+  width: 180px; 
+  font-family: 'Roboto', serif; 
+  color: #ffffff; 
+}
+
+#message-tusca {
+  margin-top: 50px;
+  margin-left: -42px;
+  width: 225px;
+  height: 300px;
+  background-color: #f8ad9d; /* Cor rosa claro para um toque romântico */
+  border: 1px solid #e35b9f; /* Cor de borda rosa mais intensa */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.3); /* Sombra rosa claro */
+  font-family: 'Roboto', serif; /* Fonte serifada para um toque clássico */
+}
+
+p#msg-tusca {
+  font-size: 20px;
+  margin-top: 5px;
+  padding-left: 26px;
+  line-height: 2.2; 
+  width: 300px; 
+  font-family: 'Roboto', serif; 
+  color: #ffffff; 
+}
+
+#message-photos {
+  margin-top: 70px;
+  margin-left: -42px;
+  width: 225px;
+  height: 300px;
+  background-color: #f8ad9d; /* Cor rosa claro para um toque romântico */
+  border: 1px solid #e35b9f; /* Cor de borda rosa mais intensa */
+  border-radius: 10px; /* Borda mais arredondada */
+  box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.3); /* Sombra rosa claro */
+  font-family: 'Roboto', serif; /* Fonte serifada para um toque clássico */
+}
+
+p#msg-photos {
+  font-size: 20px;
+  margin-top: 5px;
+  padding-left: 10px;
+  line-height: 2.2; 
+  width: 300px; 
+  font-family: 'Roboto', serif; 
+  color: #ffffff; 
+}
+
+.center-image {
+  display: block;
+  margin: 0 auto;
+  padding-top: 30px;
+  margin-left: 70px;
+  width: 70rem;
+  height: 42rem;
+}
