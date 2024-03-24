@@ -1,11 +1,11 @@
-"projeto1": {
+{
+        "projeto1": {
         "title": "Projeto 1",
         "category": "Desenvolvimento de Software",
         "date": "01 de Janeiro, 2020",
         "projectUrl": "https://github.com/Games/",
         "description": "Descrição do Projeto 1"
-},
-  "projeto2": {
+}, "projeto2": {
     "title": "Projeto 2",
     "category": "Desenvolvimento de Software",
     "date": "15 de Fevereiro, 2020",
