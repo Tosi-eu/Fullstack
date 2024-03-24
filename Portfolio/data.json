@@ -1,5 +1,5 @@
 {
-  "projetos": [
+  "portfolio": [
     {
       "title": "Projeto 1",
       "category": "Desenvolvimento de Software",
@@ -14,5 +14,6 @@
       "projectUrl": "www.example.com/projeto2",
       "description": "Descrição do Projeto 2"
     }
-  ]
+  ],
 }
+
