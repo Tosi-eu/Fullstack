@@ -1,5 +1,5 @@
 {
-  "projeto1": {
+  "projeto1": {[
         title: "Projeto 1",
         category: "Desenvolvimento de Software",
         date: "01 de Janeiro, 2020",
@@ -13,4 +13,5 @@
         projectUrl: "www.example.com/projeto2",
         description: "Descrição do Projeto 2"
       }
+  ]
 }
