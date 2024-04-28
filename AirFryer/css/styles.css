@@ -1,0 +1,285 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#background-image{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4; 
+  pointer-events: none;
+  background: url('../img/alimentos/kitchen.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  margin-top: -355px;
+  margin-left: 170px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Define a altura como 100% da altura da viewport */
+}
+
+#loadingImage {
+  width: 200px; /* ou o tamanho desejado */
+  height: auto; /* Para manter a proporção da imagem */
+  margin-top: -610px;
+}
+
+#foodImage {
+  width: 270px; /* ou o tamanho desejado */
+  height: auto; /* Para manter a proporção da imagem */
+  margin-top: 685px;
+  margin-left: 130px;
+  position: absolute; /* Posição absoluta para sobrepor a Air Fryer */
+  z-index: 1; /* Certifica-se de que a imagem do alimento está acima da Air Fryer */
+}
+
+#airFryierImage {
+  width: 500px; /* ou o tamanho desejado */
+  height: auto; /* Para manter a proporção da imagem */
+  margin-top: 480px; /* Mantenha o mesmo posicionamento vertical da Air Fryer */
+  position: relative; /* Posição relativa para criar um contexto de posicionamento para os elementos filhos */
+  z-index: 0; /* Certifica-se de que a Air Fryer está atrás da imagem do alimento */
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+input,
+select {
+  padding: 8px;
+  margin-bottom: 15px;
+  width: 200px;
+  box-sizing: border-box;
+  display: block; /* Para que cada input fique em uma linha */
+  border-radius: 6px;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+}
+
+select {
+  color: var(--input-color);
+}
+
+/* Aumentando as dimensões da imagem */
+img {
+  margin-left: 50px; /* Ajuste a margem conforme necessário */
+  margin-top: 150px;
+}
+
+button {
+  background-color: rgb(54, 105, 218);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Adicione uma sombra sutil */
+}
+
+button:hover {
+  background-color: rgb(61, 128, 253);
+}
+
+.food-options {
+  margin-left: -10px; /* Ajuste a margem conforme necessário */
+  padding-top: 40px; /* Ajuste a margem conforme necessário */
+}
+
+.button-container {
+  display: grid; /* Alterado para grid */
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas com largura igual */
+  grid-gap: 5px; /* Espaçamento entre os botões */
+  margin-top: 10px;
+  margin-left: 20px; /* Ajuste a margem conforme necessário */
+}
+
+#loadingImage {
+  width: 500px; /* ou o tamanho desejado */
+}
+
+:root {
+  --input-color: #000000;
+  --input-border: #CDD9ED;
+  --input-background: #fff;
+  --input-placeholder: #000000;
+
+  --input-border-focus: #275EFE;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #EEF4FF;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678EFE;
+}
+
+#panel-info{
+  background-color: #ffffff; /* Adicione uma cor de fundo para destacar as áreas */
+  border: 1px solid rgb(66, 129, 247); /* Adicione uma borda para separar as áreas */
+  border-radius: 10px; /* Adicione bordas arredondadas */
+  padding: 20px; /* Adicione preenchimento interno */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adicione uma sombra sutil */
+  margin-top: 510px;
+  max-height: 400px;
+  margin-right: 80px;
+}
+
+#panel-food-option{
+  background-color: #ffffff; /* Adicione uma cor de fundo para destacar as áreas */
+  border: 1px solid rgb(66, 129, 247); /* Adicione uma borda para separar as áreas */
+  border-radius: 10px; /* Adicione bordas arredondadas */
+  padding: 10px; /* Adicione preenchimento interno */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adicione uma sombra sutil */
+  margin-top: 560px;
+  max-height: 300px;
+  margin-left: 80px;
+
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+}
+
+.form-field::placeholder {
+  color: var(--input-placeholder);
+}
+
+.form-field:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.form-group > span,
+.form-group .form-field {
+  white-space: nowrap;
+  display: block;
+}
+
+.form-group > span:not(:first-child):not(:last-child),
+.form-group .form-field:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.form-group > span:first-child,
+.form-group .form-field:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.form-group > span:last-child,
+.form-group .form-field:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.form-group > span:not(:first-child) {
+  margin-left: -1px;
+}
+
+.form-group .form-field {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-group > span {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.form-group:focus-within > span {
+  color: var(--group-color-focus);
+  background: var(--group-background-focus);
+  border-color: var(--group-border-focus);
+}
+
+select {
+  color: var(--input-color);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+}
+
+#warnings {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.7); /* Cor de fundo vermelha com opacidade */
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 999; /* Certifica-se de que está acima de outros elementos */
+}
+
+#warnings p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.main-panel {
+  position: relative; 
+  z-index: 1;
+  background-image: url('../img/off/wall.png');
+  padding: 20px;
+  border-radius: 10px; 
+  width: 1700px;
+  height: 750px;
+  margin-top: 130px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}

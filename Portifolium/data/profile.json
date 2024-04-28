@@ -1,0 +1,86 @@
+{
+  "name": "Guilherme H G Tosi",
+  "photo": "https://avatars.githubusercontent.com/u/87606621?s=400&u=81ca6d101ef8b263cca88b0a02531491f78e2b13&v=4",
+  "job": "Suporte Técnico no CeMEAI",
+  "location": "São Carlos - SP",
+  "phone": "(19) 996380863",
+  "email": "galdiniguilherme@usp.br",
+  "skills": {
+    "hardSkills": [
+      {
+        "name": "Python",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/python.png"
+      },
+      {
+        "name": "Javascript",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/js.png"
+      },
+      {
+        "name": "React Native",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/react.png"
+      },
+      {
+        "name": "PostgreSQL",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/postgres.png"
+      },
+      {
+        "name": "Django",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/django.png"
+      },
+      {
+        "name": "Git",
+        "logo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/git.png"
+      }
+    ],
+    "softSkills": [
+      "Proatividade",
+      "Foco",
+      "Trabalho em equipe",
+      "Organização"
+    ]
+  },
+  "languages": [
+    "Português-BR  ->  Fluente",
+    "Inglês US  ->  Avançado",
+    "Francês  ->  Intermediário"
+  ],
+  "portfolio": [
+    {
+      "name": "Tetris Feito em Assembly para uma disciplina da USP",
+      "url": "https://github.com/Tosi-eu/Games/tree/main/Assembly/Tetris",
+      "photo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/tetris_jogo.png",
+      "github": true
+    },
+    {
+      "name": "Projeto indepente para simulação de air fryer para aprendizado em POO",
+      "photo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/airFryer.png",
+      "url": "https://github.com/Tosi-eu/Fullstack/Air Fryer",
+      "github": true
+    },
+    {
+      "name": "Dashboard de vendedores usando Bubble, Supabase e API do chatGPT",
+      "url": "https://ginga-32016.bubbleapps.io/version-test",
+      "photo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/bubble.png",
+      "github": false
+    },
+    {
+      "name": "Veja mais no meu github!",
+      "url": "https://github.com/Tosi-eu?tab=repositories",
+      "photo": "https://raw.githubusercontent.com/Tosi-eu/Fullstack/main/Portifolium/data/imgs/projects.png",
+      "github": true
+    }
+  ],
+  "professionalExperience": [
+    {
+      "name": "Suporte Técnico em TI / CeMEAI",
+      "period": "2023 - até o momento",
+      "description": "É uma honra poder fazer parte de uma empresa incrível, com pessoas com muito conhecimento e vontade de ensinar. Poder contribuir com o sucesso e todos é satisfatório!"
+    },
+    {
+      "name": "Desenvlvedor Fullstack / Cafézinho",
+      "period": "2022 - 2023",
+      "description": "Foi um prazer estar ao lado de pessoas com muita vontade aprender, juntas no propósito de fazer uma startup crescer e impactar vidas!!"
+    }
+  ],
+  "aboutMe": "Guilherme Tosi, um jovem de 22 anos, nasceu na cidade de Rio Claro, no interior de São Paulo. Atualmente, está cursando Sistemas de Informação na renomada Universidade de São Paulo (USP).Com uma paixão fervorosa pelo mundo da tecnologia, Guilherme tem um interesse particular em aprofundar seus conhecimentos em Desenvolvimento Web e Análise de Dados. Além disso, ele nutre uma curiosidade crescente pela área comercial, buscando entender como as tecnologias podem impulsionar o crescimento e a eficiência das empresas.Fora do mundo tech, Guilherme encontra equilíbrio e bem-estar na academia, onde dedica parte do seu tempo para cuidar da saúde física e mental.Profissionalmente, Guilherme já teve experiências como desenvolvedor web, contribuindo para a construção de soluções digitais inovadoras. Além disso, ele também desempenhou o papel de suporte técnico em laboratório, mostrando sua versatilidade e capacidade de lidar com diferentes desafios.Guiado por seus valores e princípios, Guilherme busca por uma empresa que valorize não apenas o aspecto técnico, mas também o humano. Ele acredita no poder da colaboração, da empatia e da diversidade para criar ambientes de trabalho mais inclusivos e produtivos. Em sua jornada profissional, ele almeja fazer parte de uma equipe engajada e comprometida com o desenvolvimento pessoal e profissional de todos os seus membros."
+}

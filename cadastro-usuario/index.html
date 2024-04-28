@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="https://p7.hiclipart.com/preview/194/460/1011/web-development-computer-icons-favicon-website-search-engine-optimization-www-web-site-internet-icon-thumbnail.jpg" type="image/x-icon">
+   
+    <script type = "text/javascript" src="./js/validar.js" defer></script> 
+    <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+    <header></header>
+    <br>
+    <div class="container-border" style="max-width: 600px;">
+        <div class="row">
+            <div class="col">
+                <h2>Cadastro de Usuário</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form id="singleForm" action="javascript:void(0);">
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label"><b>Primeiro Nome</b></label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Guilherme Henrique">
+                        <div id="inputNameHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputYear" class="form-label"><b>Ano de Nascimento</b></label>
+                        <input type="text" class="form-control" id="inputYear" placeholder="2001" required>
+                        <div id="inputYearHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label"><b>Email</b></label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="example@usp.br" required>
+                        <div id="inputEmailHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label"><b>Senha</b></label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Su4S3nhaFor!#" required>
+                        <meter id="passStrengthMeter" low="20" high="70" min="0" max="100" optimum="100"
+                            style="width: 100%;"></meter>
+                        <div id="inputPasswordHelp" class="form-text"></div>
+                        <div id="inputResult" class="form-text"></div>
+                    </div>
+                    <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-primary">
+                                Enviar
+                            </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

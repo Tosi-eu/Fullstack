@@ -1,0 +1,423 @@
+<<<<<<< HEAD
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fae1dd;
+}
+
+.container {
+  position: relative;
+}
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f08080;
+}
+
+.envelope:before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  transition: width 0.5s ease, height 0.5s ease, margin-left 0.5s ease, margin-top 0.5s ease;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+  transition: width 0.5s ease, height 0.5s ease, margin-left 0.5s ease, margin-top 0.5s ease;
+}
+
+.text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  color: #003049;
+  top: 275%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: font-size 0.4s ease, top 0.4s ease, left 0.4s ease;
+  width: 675px;
+  height: 900px;
+}
+
+.card.zoomed .text {
+  font-size: 22px; /* ou o tamanho desejado */
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card.zoomed .heart{
+  font-size: 32px; /* ou o tamanho desejado */
+  top: 57%;
+  left: 4%;
+}
+
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 110px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Add the shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 250px;
+  left: 765px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+.card.zoomed {
+  width: 750px;
+  height: 800px;
+  margin-left: -165px;
+  margin-top: -380px;
+  z-index: 12;
+}
+
+.card.zoomed:before {
+  width: 700px;
+  height: 750px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+a#button {
+  font-family: "Roboto";
+  position:relative;
+  width: auto;
+  display:inline-block;
+  color:#ecf0f1;
+  text-decoration:none;
+  border-radius:5px;
+  border:solid 1px #f8ad9d;
+  background:#ef866e;
+  text-align:center;
+  padding:16px 18px 14px;
+  margin: 12px;
+  margin-left: -770px;
+  margin-bottom: 100px;
+  
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  
+  -webkit-box-shadow: 0px 6px 0px #f46242;
+  -moz-box-shadow: 0px 6px 0px #ed7458;
+  box-shadow: 0px 6px 0px #d97e6a;
+}
+
+#button:active{
+  font-family: "Roboto";
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
+}
+=======
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fae1dd;
+}
+
+.container {
+  position: relative;
+}
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f08080;
+}
+
+.envelope:before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  transition: width 0.5s ease, height 0.5s ease, margin-left 0.5s ease, margin-top 0.5s ease;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+  transition: width 0.5s ease, height 0.5s ease, margin-left 0.5s ease, margin-top 0.5s ease;
+}
+
+.text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  color: #003049;
+  top: 275%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: font-size 0.4s ease, top 0.4s ease, left 0.4s ease;
+  width: 675px;
+  height: 900px;
+}
+
+.card.zoomed .text {
+  font-size: 22px; /* ou o tamanho desejado */
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card.zoomed .heart{
+  font-size: 32px; /* ou o tamanho desejado */
+  top: 57%;
+  left: 4%;
+}
+
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 110px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Add the shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 250px;
+  left: 765px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+.card.zoomed {
+  width: 750px;
+  height: 800px;
+  margin-left: -165px;
+  margin-top: -380px;
+  z-index: 12;
+}
+
+.card.zoomed:before {
+  width: 700px;
+  height: 750px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+a#button {
+  font-family: "Roboto";
+  position:relative;
+  width: auto;
+  display:inline-block;
+  color:#ecf0f1;
+  text-decoration:none;
+  border-radius:5px;
+  border:solid 1px #f8ad9d;
+  background:#ef866e;
+  text-align:center;
+  padding:16px 18px 14px;
+  margin: 12px;
+  margin-left: -770px;
+  margin-bottom: 100px;
+  
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  
+  -webkit-box-shadow: 0px 6px 0px #f46242;
+  -moz-box-shadow: 0px 6px 0px #ed7458;
+  box-shadow: 0px 6px 0px #d97e6a;
+}
+
+#button:active{
+  font-family: "Roboto";
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
+}
+>>>>>>> db5adb854ee4fb5cdd699cf3ffc0dbb9ff87e4a4
