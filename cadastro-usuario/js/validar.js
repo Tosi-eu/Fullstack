@@ -38,11 +38,11 @@ function validarNome(e){
     console.log(e.target.value);
     const primeiroNome = e.target.value.trim().split(' ')[0];
 
-    if (primeiroNome.target.value.length < 6){
+    if (primeiroNome.length < 6){
 		nomeHelp.textContent = "Formato de nome inválido. Menor que 6 caracteres."; 
         nomeHelp.style.color="red";
 	}
-	else if(primeiroNome.target.value.trim().match(regexNome) == null){
+	else if(primeiroNome.match(regexNome) == null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
         nomeHelp.textContent = "Formato de nome inválido"; 
         nomeHelp.style.color="red";
