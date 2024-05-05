@@ -74,7 +74,7 @@ function validarEmail(email) {
     const regexSenhaFraca = /^(?=.*[!@#$%^&*])(?=.*[0-9])[A-Za-z0-9!@#$%^&*]{1,7}$/;
     const regexSenhaModerada = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#$%^&*]{8,}$/;
     const regexSenhaForte = /^(?=(.*?[!@#$%^&*]){2})(?=(.*?\d){2})(?=(.*?[A-Z]){2}).{12,}$/;
-    const nomeTrimmado = nome.value.trim()
+    const nomeTrimmado = nome.value.trim().split(" ")[0]
     const anoNascimento = ano.value.trim()
 
     console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
@@ -111,13 +111,21 @@ function validarEmail(email) {
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
     }
-    else if(!e.target.value.trim().includes(nomeTrimmado) || !e.target.value.trim().includes(anoNascimento)){ //são por default true
-            senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
+    else if(senha.value.trim().includes(nomeTrimmado)){ //são por default true
+            senhaHelp.textContent = "A senha não pode conter seu nome!";
             senhaHelp.style.color = "red";
             senhaMeter.value = 0; // Valor para senha inválida
             senhaMeter.low = 20;
             senhaMeter.high = 80;
             senhaMeter.optimum = 100;
+    }
+    else if(senha.value.trim().includes(anoNascimento)){ //são por default true
+        senhaHelp.textContent = "A senha não pode conter seu ano de nascimento!";
+        senhaHelp.style.color = "red";
+        senhaMeter.value = 0; // Valor para senha inválida
+        senhaMeter.low = 20;
+        senhaMeter.high = 80;
+        senhaMeter.optimum = 100;
     }else {
         senhaHelp.textContent = "Senha inválida";
         senhaHelp.style.color = "black";
