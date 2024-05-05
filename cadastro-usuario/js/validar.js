@@ -113,7 +113,7 @@ function validarEmail(email) {
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
     }
-    else if(e.target.value.trim().includes(nomeTrimmado) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
+    else if(!e.target.value.trim().includes(nomeTrimmado) || !e.target.value.trim().includes(anoNascimento)){
             senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
             senhaHelp.style.color = "red";
     }else {
