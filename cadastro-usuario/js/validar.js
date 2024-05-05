@@ -33,23 +33,21 @@ neste caso o objeto 'nome'
 */
 function validarNome(e){ 
     //declaração da expressão regular para definir o formato de um nome válido
-    const regexNome = /^[A-Z][a-z]+ ?([A-Z][a-z]+)?$/; //Agora aceita não só primeiros nomes compostos
-    
+    const regexNome = /^(?:[A-Z][a-z]{5,})(?: [A-Z][a-z]{1,})?(?: [A-Z][a-z]{1,})?$/
+
+
     console.log(e);
     console.log(e.target.value);
-    const primeiroNome = e.target.value.trim().split(' ')[0];
+    const nomeTrimmado = nome.value.trim()
 
-    if (primeiroNome.length < 6){
-		nomeHelp.textContent = "Formato de nome inválido. Menor que 6 caracteres."; 
-        nomeHelp.style.color="red";
-	}
-	else if(primeiroNome.match(regexNome) == null){
+    if(nomeTrimmado.match(regexNome) == null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
         nomeHelp.textContent = "Formato de nome inválido"; 
         nomeHelp.style.color="red";
     }
     else{
-        nomeHelp.textContent = "";
+        nomeHelp.textContent = "Nome váildo!";
+        nomeHelp.style.color="green";
     }       
 }  
 
@@ -76,14 +74,14 @@ function validarEmail(email) {
     const regexSenhaFraca = /^(?=.*[!@#$%^&*])(?=.*[0-9])[A-Za-z0-9!@#$%^&*]{1,7}$/;
     const regexSenhaModerada = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#$%^&*]{8,}$/;
     const regexSenhaForte = /^(?=(.*?[!@#$%^&*]){2})(?=(.*?\d){2})(?=(.*?[A-Z]){2}).{12,}$/;
-    const primeiroNome = nome.value.trim().split(' ')[0];
+    const nomeTrimmado = nome.value.trim().split(' ')[0];
     const primeiroNomeComposto = nome.value.trim().split(' ')[1];
     const anoNascimento = ano.value.trim()
 
     console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
-    console.log(primeiroNome); //
+    console.log(nomeTrimmado); //
     console.log(primeiroNomeComposto);
-    console.log(e.target.value.trim().includes(primeiroNome));
+    console.log(e.target.value.trim().includes(nomeTrimmado));
     console.log(e.target.value.trim().includes(anoNascimento));
 
     if (e.target.value.trim() === '') {
@@ -93,9 +91,6 @@ function validarEmail(email) {
         senhaMeter.low = 0;
         senhaMeter.high = 100;
         senhaMeter.optimum = 100;
-    }else if(e.target.value.trim().includes(primeiroNome) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
-        senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
-        senhaHelp.style.color = "red";
     }else if (e.target.value.trim().match(regexSenhaForte)) {
         senhaHelp.textContent = "Senha forte";
         senhaHelp.style.color = "green";
@@ -117,6 +112,10 @@ function validarEmail(email) {
         senhaMeter.low = 25;
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
+    }
+    else if(e.target.value.trim().includes(nomeTrimmado) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
+            senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
+            senhaHelp.style.color = "red";
     }else {
         senhaHelp.textContent = "Senha inválida";
         senhaHelp.style.color = "black";
