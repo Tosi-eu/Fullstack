@@ -35,7 +35,6 @@ function validarNome(e){
     //declaração da expressão regular para definir o formato de um nome válido
     const regexNome = /^(?:[A-Z][a-z]{5,})(?: [A-Z][a-z]{1,})?(?: [A-Z][a-z]{1,})?$/
 
-
     console.log(e);
     console.log(e.target.value);
     const nomeTrimmado = nome.value.trim()
@@ -74,8 +73,22 @@ function validarEmail(email) {
     const regexSenhaFraca = /^(?=.*[!@#$%^&*])(?=.*[0-9])[A-Za-z0-9!@#$%^&*]{1,7}$/;
     const regexSenhaModerada = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#$%^&*]{8,}$/;
     const regexSenhaForte = /^(?=(.*?[!@#$%^&*]){2})(?=(.*?\d){2})(?=(.*?[A-Z]){2}).{12,}$/;
-    const nomeTrimmado = nome.value.trim().split(" ")[0]
+    const nomeTrimmado = nome.value.trim().split(" ")[0];
+    let senhaContemNome = false;
+    let senhaContemAno = false;
+    // Verifica se a senha contém o nome do usuário
+    if (senha.value.trim().includes(nomeTrimmado) && nome.value.trim() != "") {
+        senhaContemNome = true;
+    } else {
+        senhaContemNome = false; // Se não, a variável é mantida como false
+    }
+
     const anoNascimento = ano.value.trim()
+    if (senha.value.trim().includes(anoNascimento) && anoNascimento != "") {
+        senhaContemAno = true; // Se a senha contém o nome, a variável é setada como true
+    } else {
+        senhaContemAno = false; // Se não, a variável é mantida como false
+    }
 
     console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
     console.log(nomeTrimmado); //
@@ -111,7 +124,7 @@ function validarEmail(email) {
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
     }
-    else if(senha.value.trim().includes(nomeTrimmado)){ //são por default true
+    else if(senhaContemNome){ //são por default true
             senhaHelp.textContent = "A senha não pode conter seu nome!";
             senhaHelp.style.color = "red";
             senhaMeter.value = 0; // Valor para senha inválida
@@ -119,7 +132,7 @@ function validarEmail(email) {
             senhaMeter.high = 80;
             senhaMeter.optimum = 100;
     }
-    else if(senha.value.trim().includes(anoNascimento)){ //são por default true
+    else if(senhaContemAno){ //são por default true
         senhaHelp.textContent = "A senha não pode conter seu ano de nascimento!";
         senhaHelp.style.color = "red";
         senhaMeter.value = 0; // Valor para senha inválida
