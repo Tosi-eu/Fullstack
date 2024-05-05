@@ -8,6 +8,7 @@ var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
 var senhaMeter = document.querySelector("#passStrengthMeter");
+
 /*declarando o evento listener para o campos de texto do form. 
 Uma vez o foco do campo inputName mude, será chamada a função validarNome*/
 nome.addEventListener('focusout', validarNome);
@@ -85,32 +86,38 @@ function validarEmail(email) {
     console.log(e.target.value.trim().includes(primeiroNome));
     console.log(e.target.value.trim().includes(anoNascimento));
 
-    if(e.target.value.trim().includes(primeiroNome) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
+    if (e.target.value.trim() === '') {
+        senhaHelp.textContent = "Campo de senha vazio";
+        senhaHelp.style.color = "red";
+        senhaMeter.value = 0;
+        senhaMeter.low = 0;
+        senhaMeter.high = 100;
+        senhaMeter.optimum = 100;
+    }else if(e.target.value.trim().includes(primeiroNome) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
         senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
         senhaHelp.style.color = "red";
-    }
-    else if (e.target.value.trim().match(regexSenhaForte)) {
+    }else if (e.target.value.trim().match(regexSenhaForte)) {
         senhaHelp.textContent = "Senha forte";
         senhaHelp.style.color = "green";
         senhaMeter.value = 100; // Valor para senha forte
         senhaMeter.low = 75;
         senhaMeter.high = 100;
         senhaMeter.optimum = 100;
-    } else if (e.target.value.trim().match(regexSenhaModerada)) {
+    }else if (e.target.value.trim().match(regexSenhaModerada)) {
         senhaHelp.textContent = "Senha moderada";
         senhaHelp.style.color = "yellow";
         senhaMeter.value = 50; // Valor para senha moderada
         senhaMeter.low = 25;
         senhaMeter.high = 75;
         senhaMeter.optimum = 100;
-    } else if (e.target.value.trim().match(regexSenhaFraca)) {
+    }else if (e.target.value.trim().match(regexSenhaFraca)) {
         senhaHelp.textContent = "Senha fraca";
         senhaHelp.style.color = "red";
         senhaMeter.value = 20; // Valor para senha fraca
         senhaMeter.low = 25;
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
-    } else {
+    }else {
         senhaHelp.textContent = "Senha inválida";
         senhaHelp.style.color = "black";
         senhaMeter.value = 0; // Valor para senha inválida
