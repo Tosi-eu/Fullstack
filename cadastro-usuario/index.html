@@ -48,14 +48,28 @@
                         <div id="inputResult" class="form-text"></div>
                     </div>
                     <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary" alt="Botão para enviar o formulário de cadastro">
+                            <button type="submit" class="btn btn-primary" alt="Botão para enviar o formulário de cadastro" onclick="verificarDados()">
                                 Enviar
                             </button>
+                            <div id="message"></div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function verificarDados() {
+        var mensagemDiv = document.getElementById("message");
+
+        if (nomeVerificado && anoNascVerificado && emailVerificado && senhaVerificada) {
+            mensagemDiv.innerHTML = "<br><div class='alert alert-success' role='alert'>Todos os dados foram verificados com sucesso!</div>";
+        } else {
+            mensagemDiv.innerHTML = "";
+            mensagemDiv.innerHTML = "<br><div class='alert alert-danger' role='alert'>Alguns dados não foram verificados. Por favor, verifique novamente.</div>";
+            throw new Error("Alguns dados não foram verificados. Por favor, verifique novamente.");
+        }
+    }
+    </script>
     <footer></footer>
 </body>
 
