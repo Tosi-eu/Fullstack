@@ -39,7 +39,11 @@ function validarNome(e){
     console.log(e.target.value);
     const nomeTrimmado = nome.value.trim()
 
-    if(nomeTrimmado.match(regexNome) == null){
+    if(nomeTrimmado == ""){
+        nomeHelp.textContent = "Campo de nome vazio"; 
+        nomeHelp.style.color="red";
+    }
+    else if(nomeTrimmado.match(regexNome) == null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
         nomeHelp.textContent = "Formato de nome inválido"; 
         nomeHelp.style.color="red";
@@ -56,8 +60,8 @@ function validarEmail(email) {
     console.log(email);
     console.log(email.target.value); 
 
-    if (email.target.value == ''){
-        emailHelp.textContent = "Campo está vazio."; 
+    if (email.target.value == ""){
+        emailHelp.textContent = "Campo de email vazio."; 
         emailHelp.style.color="red";
     }
     else if (email.target.value.length < 6 || email.target.value.length > 20){
@@ -85,8 +89,8 @@ function validarEmail(email) {
     const nomeTrimmadoComposto = nome.value.trim().split(" ")[1];
 
     //variáveis booleanas para verificação de nome e/ou ano na senha
-    const senhaContemNome = false;
-    const senhaContemAno = false;
+    let senhaContemNome = false;
+    let senhaContemAno = false;
 
     //ano de nascimento
     const anoNascimento = ano.value.trim()
@@ -109,7 +113,7 @@ function validarEmail(email) {
     //console.log(e.target.value.trim().includes(nomeTrimmado));
     //console.log(e.target.value.trim().includes(anoNascimento));
 
-    if (e.target.value.trim() === '') {
+    if (e.target.value.trim() == "") {
         senhaHelp.textContent = "Campo de senha vazio";
         senhaHelp.style.color = "red";
         senhaMeter.value = 0;
@@ -173,8 +177,8 @@ ano.addEventListener('focusout', () => {
     const anoTrimado = ano.value.trim();
     console.log(ano.value);
 
-    if(anoTrimado == ''){
-        anoHelp.textContent = "Campo está vazio.";
+    if(anoTrimado == ""){
+        anoHelp.textContent = "Campo de ano de nascimento vazio.";
         anoHelp.style.color="red";
     }
     else if(anoTrimado.match(regexAno) == null){
