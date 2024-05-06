@@ -204,11 +204,11 @@ ano.addEventListener('focusout', () => {
         console.log(date.getFullYear()); 
         
         if( parseInt(anoTrimado) > parseInt(date.getFullYear() - anoMax) ){
-            anoHelp.textContent = `Ano inválido. O ano não pode ser maior que ${date.getFullYear()-anoMax}.`;
+            anoHelp.textContent = `Ano inválido. O ano não pode ser maior que ${date.getFullYear() - anoMax}.`;
             anoHelp.style.color="red";
         }
         else if( parseInt(anoTrimado) < parseInt(date.getFullYear()) - anoMin){
-            anoHelp.textContent = `Ano inválido. O ano não pode ser menor que ${date.getFullYear()-anoMin}.`;
+            anoHelp.textContent = `Ano inválido. O ano não pode ser menor que ${date.getFullYear() - anoMin}.`;
             anoHelp.style.color="red";
         }
         else{
