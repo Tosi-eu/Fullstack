@@ -56,7 +56,11 @@ function validarEmail(email) {
     console.log(email);
     console.log(email.target.value); 
 
-    if (email.target.value.length < 6 || email.target.value.length > 20){
+    if (email.target.value == ''){
+        emailHelp.textContent = "Campo está vazio."; 
+        emailHelp.style.color="red";
+    }
+    else if (email.target.value.length < 6 || email.target.value.length > 20){
         emailHelp.textContent = "Formato de email inválido. O email deve conter entre 6 e 20 caracteres!"; 
         emailHelp.style.color="red";
     }
@@ -70,20 +74,30 @@ function validarEmail(email) {
   }
 
   function validarSenha(e) {
+
+    //regex para senhas
     const regexSenhaFraca = /^(?=.*[!@#$%^&*])(?=.*[0-9])[A-Za-z0-9!@#$%^&*]{1,7}$/;
     const regexSenhaModerada = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#$%^&*]{8,}$/;
     const regexSenhaForte = /^(?=(.*?[!@#$%^&*]){2})(?=(.*?\d){2})(?=(.*?[A-Z]){2}).{12,}$/;
+    
+    //nomes do usuário
     const nomeTrimmado = nome.value.trim().split(" ")[0];
-    let senhaContemNome = false;
-    let senhaContemAno = false;
+    const nomeTrimmadoComposto = nome.value.trim().split(" ")[1];
+
+    //variáveis booleanas para verificação de nome e/ou ano na senha
+    const senhaContemNome = false;
+    const senhaContemAno = false;
+
+    //ano de nascimento
+    const anoNascimento = ano.value.trim()
+
     // Verifica se a senha contém o nome do usuário
-    if (senha.value.trim().includes(nomeTrimmado) && nome.value.trim() != "") {
+    if ((senha.value.trim().includes(nomeTrimmado) && nome.value.trim() != "" || (senha.value.trim().includes(nomeTrimmadoComposto) && nome.value.trim() != ""))) {
         senhaContemNome = true;
     } else {
         senhaContemNome = false; // Se não, a variável é mantida como false
     }
 
-    const anoNascimento = ano.value.trim()
     if (senha.value.trim().includes(anoNascimento) && anoNascimento != "") {
         senhaContemAno = true; // Se a senha contém o nome, a variável é setada como true
     } else {
@@ -91,9 +105,9 @@ function validarEmail(email) {
     }
 
     console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
-    console.log(nomeTrimmado); //
-    console.log(e.target.value.trim().includes(nomeTrimmado));
-    console.log(e.target.value.trim().includes(anoNascimento));
+    console.log(nomeTrimmado);
+    //console.log(e.target.value.trim().includes(nomeTrimmado));
+    //console.log(e.target.value.trim().includes(anoNascimento));
 
     if (e.target.value.trim() === '') {
         senhaHelp.textContent = "Campo de senha vazio";
@@ -141,7 +155,7 @@ function validarEmail(email) {
         senhaMeter.optimum = 100;
     }else {
         senhaHelp.textContent = "Senha inválida";
-        senhaHelp.style.color = "black";
+        senhaHelp.style.color = "red";
         senhaMeter.value = 0; // Valor para senha inválida
         senhaMeter.low = 20;
         senhaMeter.high = 80;
@@ -156,11 +170,14 @@ Uma vez o foco seja mudado, será chamada a função validarNome*/
 ano.addEventListener('focusout', () => {
     //declaração da expressão regular para definir o formato de um ano válido
     const regexAno = /^[0-9]{4}$/;
-    //tirar (trim) espaços em branco antes e depois da string
     const anoTrimado = ano.value.trim();
     console.log(ano.value);
 
-    if(anoTrimado.match(regexAno) == null){
+    if(anoTrimado == ''){
+        anoHelp.textContent = "Campo está vazio.";
+        anoHelp.style.color="red";
+    }
+    else if(anoTrimado.match(regexAno) == null){
         anoHelp.textContent = "Formato de ano inválido";
         anoHelp.style.color="red";
     }
