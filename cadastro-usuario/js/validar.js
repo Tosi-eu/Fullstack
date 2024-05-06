@@ -8,6 +8,10 @@ var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
 var senhaMeter = document.querySelector("#passStrengthMeter");
+var nomeVerificado = false;
+var senhaVerificada = false;
+var anoNascVerificado = false;
+var emailVerificado = false;
 
 /*declarando o evento listener para o campos de texto do form. 
 Uma vez o foco do campo inputName mude, será chamada a função validarNome*/
@@ -51,6 +55,7 @@ function validarNome(e){
     else{
         nomeHelp.textContent = "Nome váildo!";
         nomeHelp.style.color="green";
+        nomeVerificado = true;
     }       
 }  
 
@@ -73,7 +78,9 @@ function validarEmail(email) {
         emailHelp.style.color="red";
     }
     else{
-        emailHelp.textContent = "";
+        emailHelp.textContent = "Email válido";
+        emailHelp.style.color = "green";
+        emailVerificado = true;
     }    
   }
 
@@ -127,6 +134,7 @@ function validarEmail(email) {
         senhaMeter.low = 75;
         senhaMeter.high = 100;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }else if (e.target.value.trim().match(regexSenhaModerada)) {
         senhaHelp.textContent = "Senha moderada";
         senhaHelp.style.color = "yellow";
@@ -134,6 +142,7 @@ function validarEmail(email) {
         senhaMeter.low = 25;
         senhaMeter.high = 75;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }else if (e.target.value.trim().match(regexSenhaFraca)) {
         senhaHelp.textContent = "Senha fraca";
         senhaHelp.style.color = "red";
@@ -141,6 +150,7 @@ function validarEmail(email) {
         senhaMeter.low = 25;
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }
     else if(senhaContemNome){ //são por default true
             senhaHelp.textContent = "A senha não pode conter seu nome!";
@@ -202,11 +212,12 @@ ano.addEventListener('focusout', () => {
             anoHelp.style.color="red";
         }
         else{
-            anoHelp.textContent="";
+            anoHelp.textContent="Ano de nascimento válido";
+            anoHelp.style.color = "green";
+            anoNascVerificado = true;
         }        
         
-    }
-          
+    }     
 }
 
 );
