@@ -25,37 +25,51 @@
             <div class="col">
                 <form id="singleForm" action="javascript:void(0);">
                     <div class="mb-3">
-                        <label for="inputName" class="form-label"><b>Primeiro Nome</b></label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Guilherme Henrique">
+                        <label for="inputName" class="form-label" alt="nome"><b>Primeiro Nome</b></label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Guilherme Henrique" alt="Campo de texto para inserir o primeiro nome">
                         <div id="inputNameHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputYear" class="form-label"><b>Ano de Nascimento</b></label>
-                        <input type="text" class="form-control" id="inputYear" placeholder="2001" required>
+                        <input type="text" class="form-control" id="inputYear" placeholder="2001" required alt="Campo de texto para inserir o ano de nascimento">
                         <div id="inputYearHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label"><b>Email</b></label>
-                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="example@usp.br" required>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="example@usp.br" required alt="Campo de texto para inserir o email">
                         <div id="inputEmailHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputPassword" class="form-label"><b>Senha</b></label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Su4S3nhaFor!#" required>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Su4S3nhaFor!#" required alt="Campo de texto para inserir a senha">
                         <meter id="passStrengthMeter" low="20" high="70" min="0" max="100" optimum="100"
                             style="width: 100%;"></meter>
                         <div id="inputPasswordHelp" class="form-text"></div>
                         <div id="inputResult" class="form-text"></div>
                     </div>
                     <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" alt="Botão para enviar o formulário de cadastro" onclick="verificarDados()">
                                 Enviar
                             </button>
+                            <div id="message"></div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function verificarDados() {
+        var mensagemDiv = document.getElementById("message");
+
+        if (nomeVerificado && anoNascVerificado && emailVerificado && senhaVerificada) {
+            mensagemDiv.innerHTML = "<br><div class='alert alert-success' role='alert'>Todos os dados foram verificados com sucesso!</div>";
+        } else {
+            mensagemDiv.innerHTML = "";
+            mensagemDiv.innerHTML = "<br><div class='alert alert-danger' role='alert'>Alguns dados não foram verificados. Por favor, verifique novamente.</div>";
+            throw new Error("Alguns dados não foram verificados. Por favor, verifique novamente.");
+        }
+    }
+    </script>
     <footer></footer>
 </body>
 

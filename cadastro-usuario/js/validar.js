@@ -8,6 +8,10 @@ var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
 var senhaMeter = document.querySelector("#passStrengthMeter");
+var nomeVerificado = false;
+var senhaVerificada = false;
+var anoNascVerificado = false;
+var emailVerificado = false;
 
 /*declarando o evento listener para o campos de texto do form. 
 Uma vez o foco do campo inputName mude, será chamada a função validarNome*/
@@ -35,12 +39,15 @@ function validarNome(e){
     //declaração da expressão regular para definir o formato de um nome válido
     const regexNome = /^(?:[A-Z][a-z]{5,})(?: [A-Z][a-z]{1,})?(?: [A-Z][a-z]{1,})?$/
 
-
     console.log(e);
     console.log(e.target.value);
     const nomeTrimmado = nome.value.trim()
 
-    if(nomeTrimmado.match(regexNome) == null){
+    if(nomeTrimmado == ""){
+        nomeHelp.textContent = "Campo de nome vazio"; 
+        nomeHelp.style.color="red";
+    }
+    else if(nomeTrimmado.match(regexNome) == null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
         nomeHelp.textContent = "Formato de nome inválido"; 
         nomeHelp.style.color="red";
@@ -48,6 +55,7 @@ function validarNome(e){
     else{
         nomeHelp.textContent = "Nome váildo!";
         nomeHelp.style.color="green";
+        nomeVerificado = true;
     }       
 }  
 
@@ -57,7 +65,11 @@ function validarEmail(email) {
     console.log(email);
     console.log(email.target.value); 
 
-    if (email.target.value.length < 6 || email.target.value.length > 20){
+    if (email.target.value == ""){
+        emailHelp.textContent = "Campo de email vazio."; 
+        emailHelp.style.color="red";
+    }
+    else if (email.target.value.length < 6 || email.target.value.length > 20){
         emailHelp.textContent = "Formato de email inválido. O email deve conter entre 6 e 20 caracteres!"; 
         emailHelp.style.color="red";
     }
@@ -66,25 +78,49 @@ function validarEmail(email) {
         emailHelp.style.color="red";
     }
     else{
-        emailHelp.textContent = "";
+        emailHelp.textContent = "Email válido";
+        emailHelp.style.color = "green";
+        emailVerificado = true;
     }    
   }
 
   function validarSenha(e) {
+
+    //regex para senhas
     const regexSenhaFraca = /^(?=.*[!@#$%^&*])(?=.*[0-9])[A-Za-z0-9!@#$%^&*]{1,7}$/;
     const regexSenhaModerada = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#$%^&*]{8,}$/;
     const regexSenhaForte = /^(?=(.*?[!@#$%^&*]){2})(?=(.*?\d){2})(?=(.*?[A-Z]){2}).{12,}$/;
-    const nomeTrimmado = nome.value.trim().split(' ')[0];
-    const primeiroNomeComposto = nome.value.trim().split(' ')[1];
+    
+    //nomes do usuário
+    const nomeTrimmado = nome.value.trim().split(" ")[0];
+    const nomeTrimmadoComposto = nome.value.trim().split(" ")[1];
+
+    //variáveis booleanas para verificação de nome e/ou ano na senha
+    let senhaContemNome = false;
+    let senhaContemAno = false;
+
+    //ano de nascimento
     const anoNascimento = ano.value.trim()
 
-    console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
-    console.log(nomeTrimmado); //
-    console.log(primeiroNomeComposto);
-    console.log(e.target.value.trim().includes(nomeTrimmado));
-    console.log(e.target.value.trim().includes(anoNascimento));
+    // Verifica se a senha contém o nome do usuário
+    if ((senha.value.trim().includes(nomeTrimmado) && nome.value.trim() != "" || (senha.value.trim().includes(nomeTrimmadoComposto) && nome.value.trim() != ""))) {
+        senhaContemNome = true;
+    } else {
+        senhaContemNome = false; // Se não, a variável é mantida como false
+    }
 
-    if (e.target.value.trim() === '') {
+    if (senha.value.trim().includes(anoNascimento) && anoNascimento != "") {
+        senhaContemAno = true; // Se a senha contém o nome, a variável é setada como true
+    } else {
+        senhaContemAno = false; // Se não, a variável é mantida como false
+    }
+
+    console.log(e.target.value); // Impressão em console do valor do objeto 'senha' que originou o evento  
+    console.log(nomeTrimmado);
+    //console.log(e.target.value.trim().includes(nomeTrimmado));
+    //console.log(e.target.value.trim().includes(anoNascimento));
+
+    if (e.target.value.trim() == "") {
         senhaHelp.textContent = "Campo de senha vazio";
         senhaHelp.style.color = "red";
         senhaMeter.value = 0;
@@ -98,6 +134,7 @@ function validarEmail(email) {
         senhaMeter.low = 75;
         senhaMeter.high = 100;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }else if (e.target.value.trim().match(regexSenhaModerada)) {
         senhaHelp.textContent = "Senha moderada";
         senhaHelp.style.color = "yellow";
@@ -105,6 +142,7 @@ function validarEmail(email) {
         senhaMeter.low = 25;
         senhaMeter.high = 75;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }else if (e.target.value.trim().match(regexSenhaFraca)) {
         senhaHelp.textContent = "Senha fraca";
         senhaHelp.style.color = "red";
@@ -112,13 +150,26 @@ function validarEmail(email) {
         senhaMeter.low = 25;
         senhaMeter.high = 70;
         senhaMeter.optimum = 100;
+        senhaVerificada = true;
     }
-    else if(e.target.value.trim().includes(nomeTrimmado) || e.target.value.trim().includes(primeiroNomeComposto) || e.target.value.trim().includes(anoNascimento)){
-            senhaHelp.textContent = "A senha não pode conter seu ano de nascimento ou seu nome!";
+    else if(senhaContemNome){ //são por default true
+            senhaHelp.textContent = "A senha não pode conter seu nome!";
             senhaHelp.style.color = "red";
+            senhaMeter.value = 0; // Valor para senha inválida
+            senhaMeter.low = 20;
+            senhaMeter.high = 80;
+            senhaMeter.optimum = 100;
+    }
+    else if(senhaContemAno){ //são por default true
+        senhaHelp.textContent = "A senha não pode conter seu ano de nascimento!";
+        senhaHelp.style.color = "red";
+        senhaMeter.value = 0; // Valor para senha inválida
+        senhaMeter.low = 20;
+        senhaMeter.high = 80;
+        senhaMeter.optimum = 100;
     }else {
         senhaHelp.textContent = "Senha inválida";
-        senhaHelp.style.color = "black";
+        senhaHelp.style.color = "red";
         senhaMeter.value = 0; // Valor para senha inválida
         senhaMeter.low = 20;
         senhaMeter.high = 80;
@@ -133,11 +184,14 @@ Uma vez o foco seja mudado, será chamada a função validarNome*/
 ano.addEventListener('focusout', () => {
     //declaração da expressão regular para definir o formato de um ano válido
     const regexAno = /^[0-9]{4}$/;
-    //tirar (trim) espaços em branco antes e depois da string
     const anoTrimado = ano.value.trim();
     console.log(ano.value);
 
-    if(anoTrimado.match(regexAno) == null){
+    if(anoTrimado == ""){
+        anoHelp.textContent = "Campo de ano de nascimento vazio.";
+        anoHelp.style.color="red";
+    }
+    else if(anoTrimado.match(regexAno) == null){
         anoHelp.textContent = "Formato de ano inválido";
         anoHelp.style.color="red";
     }
@@ -150,19 +204,20 @@ ano.addEventListener('focusout', () => {
         console.log(date.getFullYear()); 
         
         if( parseInt(anoTrimado) > parseInt(date.getFullYear() - anoMax) ){
-            anoHelp.textContent = `Ano inválido. O ano não pode ser maior que ${date.getFullYear()-anoMax}.`;
+            anoHelp.textContent = `Ano inválido. O ano não pode ser maior que ${date.getFullYear() - anoMax}.`;
             anoHelp.style.color="red";
         }
         else if( parseInt(anoTrimado) < parseInt(date.getFullYear()) - anoMin){
-            anoHelp.textContent = `Ano inválido. O ano não pode ser menor que ${date.getFullYear()-anoMin}.`;
+            anoHelp.textContent = `Ano inválido. O ano não pode ser menor que ${date.getFullYear() - anoMin}.`;
             anoHelp.style.color="red";
         }
         else{
-            anoHelp.textContent="";
+            anoHelp.textContent="Ano de nascimento válido";
+            anoHelp.style.color = "green";
+            anoNascVerificado = true;
         }        
         
-    }
-          
+    }     
 }
 
 );
