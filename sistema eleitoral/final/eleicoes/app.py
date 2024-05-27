@@ -50,15 +50,18 @@ def get_eleitos():
     for candidatura in candidaturas:
         result.append({
             'Cod_Candidatura': candidatura[0],
+            'Nome': candidatura[9],
             'Cod_Candidato': candidatura[1],
             'Cod_Cargo': candidatura[2],
-            'Ano': candidatura[3],
-            'Cod_Pleito': candidatura[4],
-            'Cod_Candidatura_Vice': candidatura[5],
+            'Ano': candidatura[4],
+            'Cod_Pleito': candidatura[5],
+            'Cod_Candidatura_Vice': candidatura[6],
             'Eleito': candidatura[6],
-            'Partido': candidatura[7],
-            'Localidade': candidatura[8],
-            'Vice_Candidato': candidatura[9]
+            'Partido': candidatura[10],
+            'Localidade': candidatura[11],
+            'Vice_Candidato': candidatura[12],
+            'Eleito': candidatura[7],
+            'Doações': candidatura[8]
         })
     return render_template('eleitos.html', candidaturas=result)
 
